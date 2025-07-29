@@ -11,4 +11,7 @@ object Version {
     const val hiltNavigationCompose = "1.2.0"
     const val serializationJson = "1.6.3"
     const val navigationCompose = "2.9.2"
+//    const val yCharts = "2.0.0"
+    const val yCharts = "2.1.0"
+    const val vico = "1.13.0"
 }

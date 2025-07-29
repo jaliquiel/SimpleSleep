@@ -19,5 +19,8 @@ object Dependecies {
     val hiltNavigationCompose by lazy { "androidx.hilt:hilt-navigation-compose:${Version.hiltNavigationCompose}" }
     val serializationJson by lazy { "org.jetbrains.kotlinx:kotlinx-serialization-json:${Version.serializationJson}" }
     val navigationCompose by lazy { "androidx.navigation:navigation-compose:${Version.navigationCompose}" }
+    val vicoCompose by lazy { "com.patrykandpatrick.vico:compose:${Version.vico}" }
+    val vicoCore by lazy { "com.patrykandpatrick.vico:core:${Version.vico}" }
+    val vicoViews by lazy { "com.patrykandpatrick.vico:views:${Version.vico}" }
 
 }
