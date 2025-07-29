@@ -2,8 +2,13 @@ package com.example.sleepeasy.navigation
 
 import kotlinx.serialization.Serializable
 
-@Serializable
-object SleepFormScreenDestination
+interface destination
 
 @Serializable
-object SleepHubScreenDestination
+object SleepFormScreenDestination : destination
+
+@Serializable
+object SleepHubScreenDestination : destination
+
+@Serializable
+object CaffeineFormScreenDestination : destination
