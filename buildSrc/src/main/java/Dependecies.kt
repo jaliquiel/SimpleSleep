@@ -22,5 +22,5 @@ object Dependecies {
     val vicoCompose by lazy { "com.patrykandpatrick.vico:compose:${Version.vico}" }
     val vicoCore by lazy { "com.patrykandpatrick.vico:core:${Version.vico}" }
     val vicoViews by lazy { "com.patrykandpatrick.vico:views:${Version.vico}" }
-
+    val yCharts by lazy { "co.yml:ycharts:${Version.yCharts}" }
 }
