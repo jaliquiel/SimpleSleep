@@ -36,6 +36,18 @@ fun SleepFormScreen(
     popStackCallback : () -> Unit = { /* No-op by default */ },
     // TODO: handle callbacks and navigation
 ) {
+    val currentTime = Calendar.getInstance()
+    val sleepTimePickerState = rememberTimePickerState(
+        initialHour = currentTime.get(Calendar.HOUR_OF_DAY),
+        initialMinute = currentTime.get(Calendar.MINUTE),
+        is24Hour = false,
+    )
+    val wakeUpTimePickerState = rememberTimePickerState(
+        initialHour = currentTime.get(Calendar.HOUR_OF_DAY),
+        initialMinute = currentTime.get(Calendar.MINUTE),
+        is24Hour = false,
+    )
+    // TODO: do we need a way to select the date?
     Scaffold(
         modifier = Modifier
             .systemBarsPadding()
@@ -69,17 +81,6 @@ fun SleepFormScreen(
             }
         },
         content = { innerPadding ->
-            val currentTime = Calendar.getInstance()
-            val sleepTimePickerState = rememberTimePickerState(
-                initialHour = currentTime.get(Calendar.HOUR_OF_DAY),
-                initialMinute = currentTime.get(Calendar.MINUTE),
-                is24Hour = false,
-            )
-            val wakeUpTimePickerState = rememberTimePickerState(
-                initialHour = currentTime.get(Calendar.HOUR_OF_DAY),
-                initialMinute = currentTime.get(Calendar.MINUTE),
-                is24Hour = false,
-            )
             Column(
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 8.dp)
