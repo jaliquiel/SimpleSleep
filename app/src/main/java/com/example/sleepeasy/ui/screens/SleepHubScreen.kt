@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
@@ -63,6 +65,7 @@ fun SleepHubScreen(
                     .padding(innerPadding)
                     .fillMaxSize()
                     .background(MaterialTheme.colorScheme.background)
+                    .verticalScroll(rememberScrollState())
             ) {
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
@@ -78,7 +81,6 @@ fun SleepHubScreen(
                         navigateToSleepForm(SleepFormScreenDestination)
                     }
                 )
-                Spacer(modifier = Modifier.height(24.dp))
 
                 Text(
                     "Sleep Trends",
@@ -86,7 +88,6 @@ fun SleepHubScreen(
                     modifier = Modifier.padding(horizontal = 16.dp)
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-
                 Card(
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
@@ -95,14 +96,33 @@ fun SleepHubScreen(
                 ) {
                     BarchartWithSolidBars()
                 }
-                Spacer(modifier = Modifier.weight(1f))
+
+                Spacer(modifier = Modifier.height(48.dp))
 
                 CardWithButton(
-                    contentString = "Log Caffeine Intake",
+                    contentString = "Log Sleep Factors",
                     buttonAction = {
                         navigateToSleepForm(CaffeineFormScreenDestination)
                     }
                 )
+
+
+                Text(
+                    "Caffeine Intake Trends",
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Card(
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
+                        .fillMaxWidth(),
+                    elevation = CardDefaults.cardElevation(2.dp)
+                ) {
+                    BarchartWithSolidBars()
+                }
+
+                Spacer(modifier = Modifier.height(32.dp))
 
                 Text(
                     "Tip: Your data is private and secure. Use the Record button to log your sleep patterns.",
