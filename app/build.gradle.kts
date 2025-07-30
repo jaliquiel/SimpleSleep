@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.sleepeasy"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -55,6 +55,10 @@ dependencies {
     implementation(Dependecies.hiltAndroid)
     implementation(Dependecies.hiltNavigationCompose)
     implementation(Dependecies.navigationCompose)
+    implementation(Dependecies.vicoCompose)
+    implementation(Dependecies.vicoCore)
+    implementation(Dependecies.vicoViews)
+    implementation(Dependecies.yCharts)
     kapt(Dependecies.hiltAndroidCompiler)
     testImplementation(Dependecies.junit)
     androidTestImplementation(Dependecies.androidxJunit)
